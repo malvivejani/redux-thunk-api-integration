@@ -25,17 +25,13 @@ export const loginAPI = (loginInfo: any, onLoginSuccess: () => void, onLoginFail
     return async (dispatch: any) => {
         dispatch(loginRequest())
         await axios.post('/auth/login', loginInfo).then(response => {
-            console.log("response", response);
             const login = response?.data;
             if (response.data.statusCode === 200) {
                 dispatch(loginSuccess(login.data));
-                debugger
-                console.log("toklen++++", response?.data?.accessToken);
                 localStorage.setItem('accessToken', response?.data?.data?.accessToken)
                 onLoginSuccess();
             }
         }).catch(error => {
-            console.log("error", error);
             const errmsg = error.message;
             dispatch(loginFailure(errmsg));
             onLoginFailure();

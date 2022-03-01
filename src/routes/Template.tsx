@@ -7,6 +7,8 @@ import EmployeeList from '../employee/EmployeeList';
 import Layout from '../layout/Layout';
 import Login from '../login/Login';
 import Notfound from '../notfound/Notfound';
+import AddPayroll from '../payroll/AddPayroll';
+import addPayroll from '../payroll/AddPayroll';
 
 function Template() {
   return (
@@ -17,6 +19,7 @@ function Template() {
           <Route index element={<EmployeeList />} />
           <Route path='/edit-employee' element={<EditEmployee />} />
           <Route path='/add-employee' element={<AddEmplyee />} />
+          <Route path="/add-payroll" element={<AddPayroll />} />
           <Route path="/appraisal" element={<Appraisal />} />
         </Route>
         <Route path="*" element={<Notfound />} />

@@ -43,7 +43,7 @@ function EmployeeList() {
                                     <td>{item?.salary}</td>
                                     <td>
                                         <button onClick={() => navigate('/edit-employee', { state: item })}>Edit Emp</button>
-                                        <button style={{ marginLeft: 10 }}>Add Payroll</button>
+                                        <button style={{ marginLeft: 10 }} onClick={() => navigate('/add-payroll', { state: item?.id })}>Add Payroll</button>
                                     </td>
                                 </tr>
                             )

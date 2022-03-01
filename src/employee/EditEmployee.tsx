@@ -10,7 +10,6 @@ function EditEmployee() {
     const dispatch = useDispatch();
     const employee = useSelector((state: any) => state.employee);
 
-    console.log("data", data);
     const [editEmployeeAPIData, seteditEmployeeAPIData] = useState({
         "email": data.email,
         "firstName": data.firstName,

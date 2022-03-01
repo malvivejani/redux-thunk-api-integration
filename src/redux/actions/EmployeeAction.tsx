@@ -75,13 +75,9 @@ export const addEmployeeAPI = (body: any, onSuccess: any, onFailure: any) => {
     return (dispatch: any) => {
         dispatch(editEmployeeRequest());
         axios.post(`/employee/`, body).then(response => {
-            debugger
-            const employee = response?.data;
-            console.log("add emp", response?.data);
             dispatch(editEmployeeSuccess());
             onSuccess();
         }).catch(error => {
-            debugger
             const errmsg = error.message;
             dispatch(editEmployeeFailure(errmsg))
             onFailure()
