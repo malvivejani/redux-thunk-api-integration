@@ -11,7 +11,6 @@ function AddPayroll() {
     const payrollData = useSelector((state: any) => state.payroll, shallowEqual);
     const navigation = useNavigate();
 
-
     const onSubmitHandler = (e: any) => {
         e.preventDefault();
         const body = {
@@ -27,7 +26,7 @@ function AddPayroll() {
 
     const onSuccess = () => {
         navigation(-1);
-    }
+    };
 
     return (
         <>
